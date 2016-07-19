@@ -1,0 +1,1 @@
+wp core install --url=http://192.168.1.128 --title=docker101 --admin_user=root --admin_password=docker --admin_email=me@lindison.com --allow-root

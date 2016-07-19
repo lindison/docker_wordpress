@@ -1,0 +1,11 @@
+wordpress:
+  image: s5atrain/wordpress-cli:latest
+  links:
+    - db:mysql
+  ports:
+    - 0.0.0.0::80
+
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: example

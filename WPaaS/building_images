@@ -1,0 +1,17 @@
+$ docker pull lindison/wordpress-aio
+$ docker run -itd -P --name wordpress-aio lindison/wordpress-aio
+$ docker port $(docker ps -lq)
+$ docker-ssh $(docker ps -lq)
+
+Install wp-cli
+#!/bin/bash
+
+apt update && apt-install wget
+wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp
+
+# Test WP
+$ docker exec wordpress-aio wp theme list
+
+$ docker commit -m "added WP-CLI to WP-AIP" -a "Lindis Webb" wordpress-aio lindison/wordpress-aio-wp:1
+$ docker push lindison/wordpress-aio-wp:1

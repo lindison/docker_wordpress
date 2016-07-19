@@ -1,0 +1,13 @@
+
+
+docker run --memory
+docker run --cpu-shares
+docker run --cap-drop
+docker run --net
+docker run inspect
+docker run --cpuset-cpu
+docker run --device
+docker run --itd
+docker run --it
+docker run --i
+docker run

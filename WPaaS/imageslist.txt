@@ -1,0 +1,3 @@
+
+wordpress
+s5training/wordpress-aio

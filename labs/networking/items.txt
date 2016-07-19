@@ -1,0 +1,10 @@
+# Networking
+
+- Four types of Network Deployment models for a container
+- Exposing Ports from the Docker Container
+- Mapping Ports from the Docker Container to the Docker Host
+- Linking Containers
+- Types of Networks
+- Creating Additional Bridge Networks
+  - docker network create wordpress
+

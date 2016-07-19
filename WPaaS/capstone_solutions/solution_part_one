@@ -1,0 +1,3 @@
+Create the network: docker network create wpaas_network
+Create the containers: for I in {{1..3}}; do docker run -itd --net wpaas_network -v /var/html/www -P s5atrain/wordpress-cli:aio; done
+

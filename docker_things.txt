@@ -1,0 +1,12 @@
+2 Docker Hosts
+ssh connectivity
+port 80
+
+Docker:
+
+Docker Wordpress lindison/wordpress
+
+$ docker inspect -f {{.NetworkSettings.Networks.bridge.IPAddress}} $(docker ps -lq)
+
+~~How do customers talk to services on the containers?
+~~How do Containers communicate with other containers?

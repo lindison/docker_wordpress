@@ -1,0 +1,12 @@
+--- # Docker Compose
+
+version: '2'
+
+services:
+  javasample:
+    image: training/javasample:latest
+    ports:
+      - "80:8080"
+    environment:
+      DB_USER: training
+      DB_PASS: trainpass

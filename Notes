@@ -1,0 +1,53 @@
+Docker WordPress-as-a-Service
+
+Host: Ubuntu Linux 16.04, Physical
+
+Depends:
+  docker-engine
+  docker-compose
+  pip
+  wp-cli
+
+Docker images:
+  lindison/wordpress
+  haproxy
+  tutum/haproxy
+  mariadb
+
+
+WordPress CLI:
+apt update && apt install wget
+wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp
+
+Adding the PHP Header:
+UPDATE: /var/www/html/wp-content/themes/twentysixteen/header.php
+  <div class="site-branding">
+  with content:
+            <p class="site-description"><?php echo "I am hosted by {{.NetworkSettings.IPAddress}} with on port of {{.NetworkSettings.Ports}}.";?></p>
+IPAddress = docker inspect -f {{.NetworkSettings.IPAddress}} $WP1_CID
+Ports = docker inspect -f {{.NetworkSettings.Ports}} $WP1_CID
+docker install:
+
+
+
+
+
+docker-compose install
+sudo apt-get install docker-compose
+
+ansible localhost -s -m apt -a “pkg=docker-compose state=latest”
+
+
+
+
+Useful things:
+
+This one is really cool, it's a webUI for docker.
+https://github.com/kevana/ui-for-docker
+
+This is a log aggregator.
+https://github.com/gliderlabs/logspout
+
+This is a dockerssh which limited the access a user has to the container.
+https://github.com/Yelp/dockersh

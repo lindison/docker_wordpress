@@ -1,0 +1,4 @@
+Helpful Bash Aliases
+
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias nuke_images="docker rm $(docker ps -aq)"
